@@ -1,0 +1,55 @@
+{
+  "name": "openclaw-agent-consultation-access",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Standalone OpenClaw consultation-access plugin with owner policy, grants, audit, and WebSocket sessions.",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "plugin:build": "npm run build",
+    "plugin:validate": "npm run build && node ./scripts/validate-plugin.mjs",
+    "prepare": "npm run build"
+  },
+  "files": [
+    "dist",
+    "openclaw.plugin.json",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "openclaw": ">=2026.5.12"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/ws": "^8.18.1",
+    "openclaw": "2026.5.12",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "openclaw": {
+    "plugin": "./openclaw.plugin.json",
+    "extensions": [
+      "./dist/index.js"
+    ],
+    "compat": {
+      "pluginApi": ">=2026.5.12",
+      "minGatewayVersion": "2026.5.12"
+    },
+    "build": {
+      "openclawVersion": "2026.5.12",
+      "pluginSdkVersion": "2026.5.12"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h-mascot/openclaw-agent-consultation-access.git"
+  },
+  "bugs": {
+    "url": "https://github.com/h-mascot/openclaw-agent-consultation-access/issues"
+  },
+  "homepage": "https://github.com/h-mascot/openclaw-agent-consultation-access#readme"
+}
