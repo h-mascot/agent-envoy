@@ -64,7 +64,7 @@ function parseOptionalUrl(
 
 function resolveStorePath(rawPath: string): string {
   if (!rawPath.trim()) {
-    return path.join(os.homedir(), ".openclaw", "plugins", "openclaw-agent-consultation-access", "store.json");
+    return path.join(os.homedir(), ".openclaw", "plugins", "openclaw-agent-envoy", "store.json");
   }
 
   if (rawPath.startsWith("~/")) {

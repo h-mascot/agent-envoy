@@ -24,7 +24,7 @@ assert(pkg.openclaw.compat && pkg.openclaw.compat.pluginApi, "package.json must 
 assert(pkg.openclaw.build && pkg.openclaw.build.openclawVersion, "package.json must include openclaw.build.openclawVersion");
 assert(pkg.openclaw.build && pkg.openclaw.build.pluginSdkVersion, "package.json must include openclaw.build.pluginSdkVersion");
 assert(manifest && typeof manifest === "object", "openclaw.plugin.json must be valid JSON");
-assert(manifest.id === "openclaw-agent-consultation-access", "openclaw.plugin.json must declare the expected plugin id");
+assert(manifest.id === "agent-envoy", "openclaw.plugin.json must declare the expected plugin id");
 assert(manifest.activation && manifest.activation.onStartup === true, "openclaw.plugin.json must enable activation.onStartup");
 assert(manifest.configSchema && typeof manifest.configSchema === "object", "openclaw.plugin.json must include a configSchema");
 

@@ -6,14 +6,14 @@ export { FakeConsultationAgentAdapter } from "./consultation-adapter.js";
 export { ConsultationGatewayRuntime } from "./gateway-runtime.js";
 export * from "./consultation-types.js";
 export default definePluginEntry({
-    id: "openclaw-agent-consultation-access",
-    name: "Agent Consultation Access",
+    id: "agent-envoy",
+    name: "Agent Envoy",
     description: "Owner-controlled consultation policies, grants, audit, and WebSocket sessions for OpenClaw agents.",
     configSchema: consultationPluginConfigSchema,
     register(api) {
         const config = parseConsultationConfig(api.pluginConfig);
         if (!config.enabled) {
-            api.logger.info("agent-consultation-access: plugin disabled by config");
+            api.logger.info("agent-envoy: plugin disabled by config");
             return;
         }
         const runtime = new ConsultationGatewayRuntime(config, api.logger);
@@ -33,7 +33,7 @@ export default definePluginEntry({
             handleUpgrade: (req, socket, head) => runtime.handleWebSocketUpgrade(req, socket, head),
         });
         api.registerService({
-            id: "agent-consultation-access",
+            id: "agent-envoy",
             start: async () => {
                 runtime.start();
             },

@@ -1,8 +1,8 @@
 {
-  "name": "openclaw-agent-consultation-access",
+  "name": "openclaw-agent-envoy",
   "version": "0.1.0",
   "type": "module",
-  "description": "Standalone OpenClaw consultation-access plugin with owner policy, grants, audit, and WebSocket sessions.",
+  "description": "Agent Envoy: standalone OpenClaw plugin for owner-controlled, policy-bound agent consultations.",
   "license": "MIT",
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -46,10 +46,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/h-mascot/openclaw-agent-consultation-access.git"
+    "url": "git+https://github.com/h-mascot/openclaw-agent-envoy.git"
   },
   "bugs": {
-    "url": "https://github.com/h-mascot/openclaw-agent-consultation-access/issues"
+    "url": "https://github.com/h-mascot/openclaw-agent-envoy/issues"
   },
-  "homepage": "https://github.com/h-mascot/openclaw-agent-consultation-access#readme"
+  "homepage": "https://github.com/h-mascot/openclaw-agent-envoy#readme"
 }

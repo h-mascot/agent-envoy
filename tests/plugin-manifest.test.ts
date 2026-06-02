@@ -18,7 +18,7 @@ describe("plugin package metadata", () => {
     assert.ok(pkg.openclaw.build?.openclawVersion);
     assert.ok(pkg.openclaw.build?.pluginSdkVersion);
 
-    assert.equal(manifest.id, "openclaw-agent-consultation-access");
+    assert.equal(manifest.id, "agent-envoy");
     assert.equal(manifest.activation?.onStartup, true);
     assert.equal(typeof manifest.configSchema, "object");
     assert.equal(manifest.configSchema.properties.networkMode.default, "private");

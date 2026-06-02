@@ -1,6 +1,6 @@
-# OpenClaw Agent Consultation Access
+# OpenClaw Agent Envoy
 
-Standalone OpenClaw plugin for owner-controlled consultation access. It exposes:
+Standalone OpenClaw plugin for owner-controlled agent envoy. It exposes:
 
 - Owner-authenticated policy, grant, revoke, session, and audit HTTP APIs
 - WebSocket consultation sessions for human and agent requesters
@@ -71,12 +71,12 @@ npm run plugin:validate
 ## Install from GitHub
 
 ```bash
-openclaw plugins install git+https://github.com/h-mascot/openclaw-agent-consultation-access.git
-openclaw plugins enable openclaw-agent-consultation-access
-openclaw plugins inspect openclaw-agent-consultation-access --runtime --json
+openclaw plugins install git+https://github.com/h-mascot/openclaw-agent-envoy.git
+openclaw plugins enable agent-envoy
+openclaw plugins inspect agent-envoy --runtime --json
 ```
 
-Then configure the plugin under `plugins.entries.openclaw-agent-consultation-access.config` with at least one owner token. Keep the admin API private.
+Then configure the plugin under `plugins.entries.agent-envoy.config` with at least one owner token. Keep the admin API private.
 
 Minimal private config shape:
 
@@ -111,8 +111,8 @@ For external requesters who should not join your tailnet, expose only `/v1/consu
 ### 1. Local package tests
 
 ```bash
-git clone https://github.com/h-mascot/openclaw-agent-consultation-access.git
-cd openclaw-agent-consultation-access
+git clone https://github.com/h-mascot/openclaw-agent-envoy.git
+cd openclaw-agent-envoy
 npm ci
 npm test
 npm run typecheck

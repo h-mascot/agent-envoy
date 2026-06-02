@@ -29,8 +29,8 @@ export function registerPlugin(config: Record<string, unknown>) {
   const services: RegisteredService[] = [];
 
   plugin.register({
-    id: "openclaw-agent-consultation-access",
-    name: "Agent Consultation Access",
+    id: "agent-envoy",
+    name: "Agent Envoy",
     source: "test",
     registrationMode: "runtime",
     config: { gateway: { port: 19001 } } as any,

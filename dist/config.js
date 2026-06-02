@@ -44,7 +44,7 @@ function parseOptionalUrl(value, fieldName, allowedProtocols) {
 }
 function resolveStorePath(rawPath) {
     if (!rawPath.trim()) {
-        return path.join(os.homedir(), ".openclaw", "plugins", "openclaw-agent-consultation-access", "store.json");
+        return path.join(os.homedir(), ".openclaw", "plugins", "openclaw-agent-envoy", "store.json");
     }
     if (rawPath.startsWith("~/")) {
         return path.join(os.homedir(), rawPath.slice(2));
