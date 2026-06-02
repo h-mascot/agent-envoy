@@ -1,55 +1,15 @@
 {
-  "name": "openclaw-agent-envoy",
+  "name": "agent-envoy",
   "version": "0.1.0",
-  "type": "module",
-  "description": "Agent Envoy: standalone OpenClaw plugin for owner-controlled, policy-bound agent consultations.",
-  "license": "MIT",
-  "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "node --import tsx --test tests/*.test.ts",
-    "plugin:build": "npm run build",
-    "plugin:validate": "npm run build && node ./scripts/validate-plugin.mjs",
-    "prepare": "npm run build"
-  },
-  "files": [
-    "dist",
-    "openclaw.plugin.json",
-    "README.md"
+  "private": true,
+  "description": "Agent Envoy monorepo for OpenClaw and Hermes envoy plugins.",
+  "workspaces": [
+    "openclaw-envoy"
   ],
-  "peerDependencies": {
-    "openclaw": ">=2026.5.12"
-  },
-  "dependencies": {
-    "ws": "^8.18.0"
-  },
-  "devDependencies": {
-    "@types/node": "^24.10.0",
-    "@types/ws": "^8.18.1",
-    "openclaw": "2026.5.12",
-    "tsx": "^4.20.6",
-    "typescript": "^5.9.3"
-  },
-  "openclaw": {
-    "plugin": "./openclaw.plugin.json",
-    "extensions": [
-      "./dist/index.js"
-    ],
-    "compat": {
-      "pluginApi": ">=2026.5.12",
-      "minGatewayVersion": "2026.5.12"
-    },
-    "build": {
-      "openclawVersion": "2026.5.12",
-      "pluginSdkVersion": "2026.5.12"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/h-mascot/openclaw-agent-envoy.git"
-  },
-  "bugs": {
-    "url": "https://github.com/h-mascot/openclaw-agent-envoy/issues"
-  },
-  "homepage": "https://github.com/h-mascot/openclaw-agent-envoy#readme"
+  "scripts": {
+    "test:openclaw": "npm --prefix openclaw-envoy test",
+    "typecheck:openclaw": "npm --prefix openclaw-envoy run typecheck",
+    "build:openclaw": "npm --prefix openclaw-envoy run build",
+    "validate:openclaw": "npm --prefix openclaw-envoy run plugin:validate"
+  }
 }
